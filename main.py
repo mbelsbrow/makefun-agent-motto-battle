@@ -22,11 +22,11 @@ import os
 
 ENTRY = "I never sleep, I never forget, and I still reply 'per my last email'."
 
-OUTPUT_PATH = os.environ.get("OUTPUT_PATH", "/output/entry.txt")
+OUTPUT_PATH = "/output/entry.txt"
 
 
 def main() -> None:
-    os.makedirs(os.path.dirname(OUTPUT_PATH) or ".", exist_ok=True)
+    os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
     with open(OUTPUT_PATH, "w", encoding="utf-8", newline="") as f:
         f.write(ENTRY)
 
